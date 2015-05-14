@@ -3,10 +3,10 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
 	  path.file <- paste("specdata/", filelist, sep = "") # path.file <- paste0("specdata/", filelist)
 	
 	  output <- data.frame()
-		for (i in id){
+	  for (i in id){
 		temp <- read.csv(path[i], head = T)
 		output <- rbind(output, temp)
-		}
+	  }
   
 	  pollutant <- output[,pollutant]
 	  poll.mean <- mean(pollutant, na.rm = TRUE)
